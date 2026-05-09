@@ -38,5 +38,25 @@ Editor - vs code
 
 
 
+---------------- Structure --------------
+
+xyzagency.org
+  assets
+    images
+    videos
+    css
+    js
+    audios
+
+  utils
+    common.js
+  
+  home.html => index.html
+  about-us.html
+  services.html
+
+
+
+
 
 

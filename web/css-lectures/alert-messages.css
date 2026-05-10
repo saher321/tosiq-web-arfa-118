@@ -1,0 +1,14 @@
+.success-msg {
+    background-color: #BCFFC4;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #ccc;
+    width: fit-content;
+
+    border-left: 4px solid #297432;
+
+    margin-bottom: 8px;
+}

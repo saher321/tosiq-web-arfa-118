@@ -6,6 +6,12 @@
 <body>
   <h2>Form tags</h2>
   <form>
+
+    <div>
+      <label>Color</label> <br>
+      <input type="color">
+    </div>
+
     <div>
       <label>Full name</label> <br>
       <input type="text" placeholder="e.g John snow" required>
@@ -19,6 +25,46 @@
     <div>
       <label>Password</label> <br>
       <input type="password" placeholder="****" required>
+    </div>
+
+    <div>
+      <label>Shift</label> <br>
+
+      <input type="radio" name="shift" id="morning">
+      <label for="morning">Morning shift</label>
+      
+      <input type="radio" name="shift" id="evening">
+      <label for="evening">Evening shift</label>
+    </div>
+
+    
+    <div>
+      <label>Courses</label> <br>
+
+      <input type="checkbox" id="uiux">
+      <label for="uiux">UI/UX Design</label>
+      
+      <input type="checkbox" id="aiml">
+      <label for="aiml">AI/ML</label>
+      
+      <input type="checkbox" id="web">
+      <label for="web">Website design & Development</label>
+    </div>
+
+    <div>
+      <label>Language</label> <br>
+
+      <select>
+        <option selected disabled>-- Select Language --</option>
+        <option>English (US)</option>
+        <option>English (UK)</option>
+        <option>URDU</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="">Description</label> <br>
+      <textarea rows="5" cols="24" placeholder="write something..."></textarea>
     </div>
     
     <br>

@@ -1,0 +1,18 @@
+.parent {
+    background-color: cyan;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .child1 {
+        background-color: gray
+    }
+    .child2 {
+        background-color: red;
+    }
+    .child3 {
+        background-color: green;
+    }
+}

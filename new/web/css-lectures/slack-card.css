@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+body {
+    background-color: #F9E7F2;
+    font-family: "Titillium Web", sans-serif;
+}
+
+
+.slack-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 12px;
+    width: 230px;
+    border: 1px solid #CBD0DB;
+
+    p {
+        color: #828282;
+    }
+
+    .action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .dev {
+            background-color: #EAEEFF;
+            color: #3350BE;
+            border-radius: 4px;
+            padding: 4px 12px;
+        }
+        .user-img {
+            img {
+                border-radius: 50px;
+            }
+        }
+    }
+}

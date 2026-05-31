@@ -1,0 +1,50 @@
+body {
+
+    margin: 0px; padding: 0px;
+
+    .hero-section {
+        height: 100vh;
+
+        background-image: url('../assets/images/hero-image.jpg');
+        background-size: cover;
+        background-position: center;
+        
+        .navbar-wrapper {
+            padding: 8px;
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: rgba(1, 1, 1, 0.5);
+                backdrop-filter: blur(3px);
+                padding: 4px 8px;
+                border-radius: 50px;
+
+                .brand {
+                    margin-top: 4px;
+                    img {
+                        border-radius: 50px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    gap: 12px;
+                    a {
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+
+                .cta {
+                    button {
+                        background-color: white;
+                        border: none;
+                        padding: 8px 12px;
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

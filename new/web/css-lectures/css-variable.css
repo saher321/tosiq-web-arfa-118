@@ -1,0 +1,14 @@
+:root {
+    --txt-clr: purple;
+    --bg-secondary-clr: #ccc;
+}
+
+h1 {
+    color: var(--txt-clr);
+    background-color: var(--bg-secondary-clr);
+    /* background-image: url(var(--img-url)) */
+}
+
+p {
+    color: var(--txt-clr)
+}

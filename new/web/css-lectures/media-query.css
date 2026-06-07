@@ -1,0 +1,40 @@
+body {
+    background-color:  green;
+}
+
+/* for theme toggling */
+/* @media (prefers-color-scheme: dark / light) { */
+@media (prefers-color-scheme: dark) {
+    h1 {
+        background: #775533;
+        color: #ddccbb;
+        outline: 5px dashed black;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        background-color:  orange;
+    }   
+    h1 {
+        display: none;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    body {
+        background-color:  #999;
+    }   
+    h1 {
+        color: navy;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 990px) {
+    body {
+        background-color:  #f8a62c;
+    }   
+    h1 {
+        color: black;
+    }
+}

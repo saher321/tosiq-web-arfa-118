@@ -1,12 +1,16 @@
 :root {
     --txt-clr: purple;
     --bg-secondary-clr: #ccc;
+    --bg-img: '../assets/images/hero-image.jpg';
 }
 
+/* body {
+    background-image: url(--bg-img)
+} */
 h1 {
     color: var(--txt-clr);
     background-color: var(--bg-secondary-clr);
-    /* background-image: url(var(--img-url)) */
+    /* background-image: url(var(--bg-img)) */
 }
 
 p {

@@ -1,0 +1,39 @@
+.main {
+    background-color: #df972c;
+    height: 300px;
+    position: relative;
+    background-image: url('../assets/images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .icons {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        width: fit-content;
+        display: flex;
+        gap: 4px;
+
+        div {
+            background-color: white;
+            padding: 4px;
+            border-radius: 20px;
+        }
+    }
+
+    .for-rent {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        padding: 4px;
+        color: black;
+        border-radius: 50px;
+        background-color: #bababa;
+        width: fit-content;
+
+
+        span {
+            color: #48f55c;
+        }
+    }
+}

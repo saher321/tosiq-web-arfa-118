@@ -1,0 +1,12 @@
+.row {
+    .parent {
+        background-color: purple;
+        color: white;
+
+    }
+    .child-row {
+        .col {
+            background-color: gray;            
+        }
+    }
+}

@@ -38,3 +38,20 @@
 // <=       :: pass.length <= 6
 // >=       :: pass.length >= 10
 // pass ? "processing" : "ENTER PASSWORD"
+// var x = 32
+// +x, ++x, x++
+// console.log(x)
+// -x, --x, x--
+// console.log(x)
+
+var x = 12
+var y = 3
+var sum = x+y
+console.log("The Sum is", sum)
+
+var celsius = prompt("Enter value in Celsius")
+var fah = celsius * 9/5 + 32
+console.log(fah)
+
+
+

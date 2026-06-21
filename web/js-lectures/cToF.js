@@ -5,4 +5,6 @@ function ctofConversion(){
     var res = document.getElementById("result")
     
     res.innerHTML = `<strong> ${fah} </strong>`
+
+    // res.innerHTML = "<strong>" + fah + "</strong>"
 }

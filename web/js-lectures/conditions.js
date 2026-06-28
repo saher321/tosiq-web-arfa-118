@@ -14,3 +14,11 @@ function checkValue() {
 
     console.log("You have entered this text: ", text)
 }
+
+// get input from user (any number)
+// and show output as "Its leap year", "Its not leap year"
+
+
+
+
+

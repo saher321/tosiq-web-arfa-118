@@ -2,21 +2,21 @@ applyTheme()
 function changeBG(color) {
     document.body.style.backgroundColor = color
 
-    // localStorage.setItem     => store value
-    // localStorage.getItem     => read value
-    // localStorage.removeItem  => remove current val
-    // localStorage.clear       => remove all val
+    // localStorage.setItem(key, value) => store value
+    // localStorage.getItem(key)        => read value
+    // localStorage.removeItem(key)     => remove current val
+    // localStorage.clear()             => remove all val
 
+    // localStorage.setItem("txtColor", color)
     localStorage.setItem("bgColor", color)
 }
 
 function applyTheme() {
-    let name = "Windows 11"
-    console.log(name.length)
     const clr = localStorage.getItem("bgColor")
-    if (clr.length > 0) {
-        document.body.style.backgroundColor = clr
-        return;
+    
+    if (!clr || clr.length <= 0) {
+        alert("No color is selected")
     }
-    alert("No color is selected")
+    
+    document.body.style.backgroundColor = clr
 }

@@ -7,7 +7,6 @@ function changeBG(color) {
     // localStorage.removeItem(key)     => remove current val
     // localStorage.clear()             => remove all val
 
-    // localStorage.setItem("txtColor", color)
     localStorage.setItem("bgColor", color)
 }
 

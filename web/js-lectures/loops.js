@@ -4,9 +4,20 @@
 // 2) condition 
 // 3) incr/decr
 
+let sum = 0
 for (let i=1; i<=10; i++) {
-    console.log("Iteration number is: ", i)
+    // if (i%2 == 0) {
+    //     console.log("Iteration number is: ", i)
+    // }
+    sum = sum + i
+
 }
+console.log("Sum of all values is: ", sum)
+
+
+// i = 1, i <= 10 true ===> sum = 0 + 1 => sum = 1 , i++
+// i = 2, i <= 10 true ===> sum = 1 + 2 => sum = 3 , i++
+// i = 3, i <= 10 true ===> sum = 3 + 3 => sum = 6 , i++
 
 
 // nestedIfElse();

@@ -4,7 +4,7 @@ const colors = [ "Purple", "Black", "White" ]
 console.log(colors[2])
 
 for (let i = 0; i < colors.length; i++ ) {
-    if (colors[i] == "Banned") {
+    if (colors[i] == "Black") {
         break;
     }
     console.log(colors[i])

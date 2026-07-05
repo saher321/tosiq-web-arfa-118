@@ -15,3 +15,13 @@ for (let i = 0; i < colors.length; i++ ) {
 // foreach
 // do-while x
 // map => arrays
+
+// ********* ASSIGNMENT (5 july, 2026, next friday) *********
+// const list = [ "Ali", 45, "W", 1, -5, "Samith", "John" ]
+
+// hint: typeof
+
+// output: 
+// letters = ["W"]
+// words = ["Ali", "Samith", "John"]
+// numbers = [45, 1, -5]

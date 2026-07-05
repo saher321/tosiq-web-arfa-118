@@ -1,3 +1,4 @@
+// youtube video link: https://www.youtube.com/watch?v=8hn22C-_5dg
 // indexes          0         1        2
 const colors = [ "Purple", "Black", "White" ]
 

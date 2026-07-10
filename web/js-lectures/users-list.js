@@ -7,17 +7,14 @@
 // }
 
 const allUsers = [
+    {id: 6, name: "Asif", email: "asif@gmail.com", status: true, role: "Vendor" },
         {id: 1, name: "Ali", email: "ali@gmail.com", status: true, role: "User" },
         {id: 2, name: "Alice", email: "alice@gmail.com", status: true, role: "Admin" },
         {id: 3, name: "Clark", email: "clark@gmail.com", status: false, role: "User" },
         {id: 4, name: "John", email: "john@gmail.com", status: false, role: "Vendor" },
         {id: 5, name: "Samantha", email: "sam@gmail.com", status: true, role: "User" },
-        {id: 6, name: "Asif", email: "asif@gmail.com", status: true, role: "Vendor" },
     ]
 
-function insertUser(user) {
-    getAllUser(allUsers)
-}
 getAllUser(allUsers)
 function getAllUser(list) {
     
@@ -27,7 +24,7 @@ function getAllUser(list) {
         // console.log(allUsers[0])
         userList.innerHTML += `
         <tr>
-            <td> ${list[i].id} </td>
+            <td> ${i+1} </td>
             <td> ${list[i].name} </td>
             <td> ${list[i].email} </td>
             <td> ${list[i].status ? "Active":"Inactive"} </td>

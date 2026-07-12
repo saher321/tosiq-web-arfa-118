@@ -41,3 +41,55 @@ function nestedIfElse (){
     }
 
 }
+
+
+// let i = 1
+// while (i<=10) {
+//     console.log(i)
+//     i++
+// }
+
+function addItem() {
+    console.log("object")
+    const users = []
+    let n = document.getElementById("name").value
+
+    while (true) {
+        users.push(n)
+        let option = prompt("Do you want an other transaction (y/n)? ")
+
+        if (option == "n")
+            break;
+        n = document.getElementById("name").value
+    }
+    console.log(users)
+}
+
+// each()
+function each() {
+    // INDEXES         0         1        2
+    const colors = ["Yellow", "Black", "Brown"]
+    colors.forEach((clr, i) => {
+        console.log(i, clr)
+    })
+}
+
+// forIn()
+function forIn() {
+    // INDEXES         0         1        2
+    const colors = ["Yellow", "Black", "Brown"]
+
+    for (let clr in colors){
+        console.log(colors[clr])
+    }
+}
+
+forOF()
+function forOF() {
+    // INDEXES         0         1        2
+    const colors = ["Yellow", "Black", "Brown"]
+
+    for (let clr of colors){
+        console.log(clr)
+    }
+}

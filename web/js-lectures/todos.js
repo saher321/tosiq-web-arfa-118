@@ -45,4 +45,7 @@ function removeUser(index){
 
 function editUser(index){
     console.log(index)
+    let newName = prompt("Enter updated name")
+    users.splice(index, 1, newName)
+    showUsers()
 }

@@ -65,7 +65,7 @@ function sumByReduce(){
         {month: "March", profit: 1000},
         {month: "April", profit: 1000},
     ]
-    let val = sales.reduce((sale, sum) => sum + sale.profit, 0)
+    let val = sales.reduce((total, sale) => total + sale.profit, 0);
 
     console.log(val)
 }

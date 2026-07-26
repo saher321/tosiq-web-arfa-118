@@ -4,3 +4,18 @@
     padding: 8px;
     border-radius: 4px;
 }
+
+.page-title{
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #999;
+}
+
+.get-started-btn{
+    color: #f1f1f1;
+    text-decoration: none;
+    background-color: #333;
+    border-radius: 4px;
+    padding: 4px;
+    margin-bottom: 10px;
+}

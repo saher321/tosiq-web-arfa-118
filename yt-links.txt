@@ -9,3 +9,6 @@
 
 26 July, 2026 (react basic)
 	- https://www.youtube.com/watch?v=LpfDDxVQrTA
+
+1 August, 2026 (navigations, components, props)
+	- https://www.youtube.com/watch?v=MYciUga6kMw

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const GetStartedBtn = () => {
+const GetStartedBtn = (props) => {
+  const { title, url, ...otherProps } = props
   return (
-    <a className='get-started-btn' href='https://facebook.com'>
-        Get Started
+    <a { ...otherProps } className='get-started-btn' href={url}>
+      { title }
     </a>
   )
 }

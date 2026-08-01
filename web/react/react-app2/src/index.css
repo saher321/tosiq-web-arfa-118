@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .bottom {
     color: #ccc; 
     background-color: #333;

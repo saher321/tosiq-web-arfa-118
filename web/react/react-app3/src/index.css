@@ -6,3 +6,10 @@
   border-radius: 5px;
   margin-bottom: 8px;
 }
+
+.icon-text {
+  margin: 12px 0px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

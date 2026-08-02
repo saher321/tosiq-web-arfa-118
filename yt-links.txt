@@ -12,3 +12,6 @@
 
 1 August, 2026 (navigations, components, props)
 	- https://www.youtube.com/watch?v=MYciUga6kMw
+
+2 August, 2026 (Children, useState, useRef)
+	- https://www.youtube.com/watch?v=hJ392XLeo0Q

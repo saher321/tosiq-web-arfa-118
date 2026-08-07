@@ -5,6 +5,7 @@ import { LuUserCog } from 'react-icons/lu'
 const App = () => {
   const [user, setUser] = useState("Ali")
   const [counter, setCounter] = useState(1)
+  const [tab, setTab] = useState("profile")
   
   const username  = useRef(null)
   const userage   = useRef(null)
@@ -39,9 +40,29 @@ const App = () => {
     console.log(name, email)
   }
 
+  const changeTab = (tabName) => {
+    setTab(tabName)
+  }
+
   return (
     <div>
       <h1>Welcome to react js</h1>
+
+      <PageTitle>
+        <h1>React Tabs [{tab}]</h1>
+        <button onClick={() => changeTab("profile")}>Profile</button> {" "}
+        <button onClick={() => changeTab("settings")}>Settings</button> {" "}
+        <button onClick={() => changeTab("privacy")}>Data & Privacy</button>
+
+        { tab == "profile" ?
+        <div> Profile content </div> :
+        tab == "settings" ?
+        <div> Settings content </div> :
+        tab == "privacy" &&        
+        <div> Data & Privacy content </div>
+        }
+      </PageTitle>
+
       <PageTitle>
         {/* child content will goes here */}
         <h2>Our Home</h2>

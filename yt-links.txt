@@ -18,3 +18,6 @@
 
 7 August, 2026 (useEffect hook)
 	- https://www.youtube.com/watch?v=7wxst9OVs-k
+
+8 August, 2026 (created layout and showing user record)
+	- https://www.youtube.com/watch?v=eR0Oif3KGcU

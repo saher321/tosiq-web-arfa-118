@@ -2,6 +2,7 @@ import React from 'react'
 import { FaBriefcase, FaBuilding } from "react-icons/fa";
 import { TbBrandAirtable } from "react-icons/tb";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from 'react-router';
 
 const UserItem = ({user}) => {
   return (
@@ -9,7 +10,9 @@ const UserItem = ({user}) => {
       <div>
         <div className='flex justify-between'>
             <img src={user.image} className='h-20 w-20' alt="" />
-            <span><FiArrowRight size={24} className='text-sky-800 mt-[3px]'/></span>
+            <Link to={`/users/${user.id}`}>
+                <span><FiArrowRight size={24} className='text-sky-800 mt-[3px]'/></span>
+            </Link>
         </div>
         <div>
             <div className='font-bold text-lg'>

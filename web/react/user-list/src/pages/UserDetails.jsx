@@ -1,11 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import WebLayout from "../layouts/WebLayout";
+import { useParams } from "react-router";
+import axios from "axios";
+import { USERS_API } from "../utils/apis";
 
 const UserDetails = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const params = useParams()
+  const [user, setUser] = useState([])
 
-export default UserDetails
+  const getUsers = async () => {
+    try {
+      const response = await axios.get(`${USERS_API}/${params.id}`)
+      if (response.data) {
+        setUser(response.data)
+      }
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+  return (
+    <WebLayout>
+      <div className="">
+        User Details #[{params.id}]
+        {user.firstName}
+      </div>
+    </WebLayout>
+  );
+};
+
+export default UserDetails;

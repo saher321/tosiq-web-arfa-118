@@ -6,12 +6,15 @@ import UserItem from '../components/UserItem.jsx'
 
 const Users = () => {
   const [users, setUsers] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const getUsers = async () => {
     try {
+      setIsLoading(true)
       const response = await axios.get(USERS_API)
       if (response.data.users && response.data.users.length > 0) {
         setUsers(response.data.users)
+      setIsLoading(false)
       }
     } catch (error) {
       throw new Error(error)
@@ -21,9 +24,17 @@ const Users = () => {
   useEffect(() => {
     getUsers()
   }, [])
+
+  // if (isLoading) {
+  //   return <div>User list is loading</div>
+  // }
+
   return (
     <WebLayout>
       <div>
+        { isLoading && 
+        <div className='font-bold text-center my-10'> User list is loading... </div> 
+        }
         <div className='grid grid-cols-12 gap-4'>
           {
             users.map((user, i) => {

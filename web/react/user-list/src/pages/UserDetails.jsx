@@ -12,6 +12,7 @@ const UserDetails = () => {
     try {
       const response = await axios.get(`${USERS_API}/${params.id}`)
       if (response.data) {
+        console.log(response.data)
         setUser(response.data)
       }
     } catch (error) {
@@ -26,7 +27,7 @@ const UserDetails = () => {
     <WebLayout>
       <div className="">
         User Details #[{params.id}]
-        {user.firstName}
+        {user.firstName} &mdash; {user.company?.address?.city}
       </div>
     </WebLayout>
   );

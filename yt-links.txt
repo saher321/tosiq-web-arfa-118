@@ -21,3 +21,6 @@
 
 8 August, 2026 (created layout and showing user record)
 	- https://www.youtube.com/watch?v=eR0Oif3KGcU
+
+9 August, 2026 (loading, details page, active, zustand)
+	- https://www.youtube.com/watch?v=vxHMVm5sTyc

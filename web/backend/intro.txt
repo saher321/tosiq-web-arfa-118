@@ -1,0 +1,33 @@
+********** Backend **********
+Php, Laravel
+MERN STACK (nextjs)
+
+Php: (DB :: mysql)
+    hyper text preprocessing
+    -> Server side language
+    -> Programming language
+    -> Oop method -> db connection
+    - SQL
+        -> Relational database
+        -> Structure query language
+    - MYSQL
+        -> DBMS
+
+Laravel: (framework of php)
+    -> MVC
+    Model (structure of table defines)
+    View (Frontend portion :: blade template)
+    Controller (Business logic)
+
+    -> Framework -> vuejs, reactjs, blade template
+    -> API -> http://localhost:8080/users
+    -> Reactjs
+
+MERN STACK (with nextjs)
+    -> NEXTJS :: Framework (Frontend + backend)
+    React js
+    MERN 
+    M -> Mongodb (database)
+    E -> Expressjs
+    R -> Reactjs
+    N -> Nodejs

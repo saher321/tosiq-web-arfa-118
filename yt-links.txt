@@ -24,3 +24,6 @@
 
 9 August, 2026 (loading, details page, active, zustand)
 	- https://www.youtube.com/watch?v=vxHMVm5sTyc
+
+15 August, 2026 (Backend intro)
+	- https://www.youtube.com/watch?v=_FGWSyJX5hY

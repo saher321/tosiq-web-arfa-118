@@ -1,0 +1,14 @@
+Mern Stack
+
+1 - apis
+2 - integration
+3 - database (mongodb atlas)
+4 - Crud operation
+5 - PROJECT (pms) (Modular appr.)
+    - Authentication - RoleBased
+    - Users
+    - Customers
+    - Projects
+    - Employees
+    - Tasks
+

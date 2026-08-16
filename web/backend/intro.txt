@@ -28,6 +28,7 @@ MERN STACK (with nextjs)
     React js
     MERN 
     M -> Mongodb (database)
+        - Mongodb compass (offline) / Mongodb atlas (online)
     E -> Expressjs
     R -> Reactjs
     N -> Nodejs

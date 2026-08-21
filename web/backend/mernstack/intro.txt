@@ -1,5 +1,8 @@
 Mern Stack
 
+// bk: nodemon, express, multer, nanoid, jsonwebtoken
+// bcrypt, mongoose, dotenv
+
 1 - apis
 2 - integration
 3 - database (mongodb atlas)

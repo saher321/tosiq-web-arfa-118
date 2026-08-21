@@ -27,3 +27,6 @@
 
 15 August, 2026 (Backend intro)
 	- https://www.youtube.com/watch?v=_FGWSyJX5hY
+
+21 August, 2026 (dummy api)
+	- https://www.youtube.com/watch?v=nwUwxJJJfBo

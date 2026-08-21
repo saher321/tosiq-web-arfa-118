@@ -31,3 +31,11 @@ app.get("/health", (req, res) => {
 app.listen(5000, () => {
     console.log(`Server is started at http://localhost:5000`)
 })
+
+
+// assignment
+// create notes api
+    // - id
+    // - title
+    // - description
+    // - status (active, pending, processing, completed)

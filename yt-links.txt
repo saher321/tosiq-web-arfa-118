@@ -30,3 +30,6 @@
 
 21 August, 2026 (dummy api)
 	- https://www.youtube.com/watch?v=nwUwxJJJfBo
+
+22 August, 2026 (refactered code, database added)
+	- https://www.youtube.com/watch?v=R0b5XROsCDI

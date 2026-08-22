@@ -1,5 +1,6 @@
 import express from 'express'
 import userRouter from './routes/user.routes.js'
+import { DBConnection } from './config/db.js'
 
 // commonJS
 // const express = require("express")
@@ -20,8 +21,10 @@ app.get("/health", (req, res) => {
     })
 })
 
-app.listen(5000, () => {
-    console.log(`Server is started at http://localhost:5000`)
+DBConnection().then(() => {
+    app.listen(5000, () => {
+        console.log(`Server is started at http://localhost:5000`)
+    })
 })
 
 

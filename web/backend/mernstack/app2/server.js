@@ -1,23 +1,15 @@
 import express from 'express'
+import userRouter from './routes/user.routes.js'
 
 // commonJS
 // const express = require("express")
 
 const app = express()
 const PREFIX = '/api/v1'
-const users = [
-    {id: 101, name: "Kloe", email:"kloe@email.com"},
-    {id: 102, name: "July", email:"july@email.com"},
-    {id: 103, name: "Alex", email:"alx@email.com"}
-]
 
-// end-point: http://localhost:5000/api/v1/users
-app.get(`${PREFIX}/users`, (req, res) => {
-    return res.send({
-        status: true,
-        users
-    })
-})
+
+app.use(PREFIX, userRouter)
+
 
 // http://localhost:5000/health
 

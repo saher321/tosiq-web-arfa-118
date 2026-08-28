@@ -36,3 +36,6 @@
 
 23 August, 2026 (folder structure (Modular), data fetching from db)
 	- https://www.youtube.com/watch?v=yWKS8Z2Ws28
+
+28 August, 2026 (add data to db)
+	- https://www.youtube.com/watch?v=fteJ9zyBdVU

@@ -3,7 +3,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { Link } from 'react-router'
-import { ALL_USERS_API } from '../utils/apis.js'
+import { ALL_USERS_API, DEL_USER_API } from '../utils/apis.js'
+import toast from 'react-hot-toast'
 
 const Users = () => {
   const [users, setUsers] = useState([])
@@ -16,6 +17,26 @@ const Users = () => {
         setUsers(response.data.users)
       }
     } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  const handleDelete = async (id) => {
+    if (!id) {
+      toast.error("ID not found")
+      return;
+    }
+
+    try {
+      const response = await axios.delete(DEL_USER_API + "/" + id)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        setUsers(response.data.users)
+      } else {        
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      toast.error("Internal server error")
       throw new Error(error)
     }
   }
@@ -36,6 +57,7 @@ const Users = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +69,7 @@ const Users = () => {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>{user.status}</td>
+                  <td> <Link onClick={() => handleDelete(user._id)}>Delete</Link> </td>
                 </tr>
               )
             })

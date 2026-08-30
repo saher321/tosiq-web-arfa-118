@@ -10,7 +10,7 @@ PMS
             - projects
             - employees
             - tasks
-        - pkgs: zustand, tailwindcss, axios, toast, hook form, spinners, router, momentjs
+        - pkgs: react-icons, zustand, tailwindcss, axios, toast, hook form, spinners, router, momentjs
 
     - Server (Services :: APIS)
         - Modules

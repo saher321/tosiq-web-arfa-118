@@ -1,0 +1,26 @@
+
+<input type="text" placeholder="" className="" />
+
+export const InputField = (props) => {
+    const { type, placeholder, className, ...otherProps } = props
+    return (
+        <input
+        { ...otherProps }
+        type={type}
+        placeholder={placeholder}
+        className={`${className ?? ''} py-2 px-3 rounded w-full bg-gray-200 border border-gray-300 focus:outline-amber-600 `}
+        />
+    )
+}
+
+export const SimpleButton = (props) => {
+    const { text, className, ...otherProps } = props
+    return (
+        <button
+        { ...otherProps }
+        className={`${className ?? ''} cursor-pointer hover:shadow-lg py-2 px-3 rounded bg-mist-950 text-slate-100 border border-gray-800 `}
+        >
+            {text}
+        </button>
+    )
+}

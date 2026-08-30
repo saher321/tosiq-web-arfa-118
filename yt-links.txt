@@ -42,3 +42,6 @@
 
 29 August, 2026 (delete, project)
 	- https://www.youtube.com/watch?v=t8rLJTdjzr4
+
+30 August, 2026 (Signup ui and backend)
+	- https://www.youtube.com/watch?v=p6k2iZtUgAI

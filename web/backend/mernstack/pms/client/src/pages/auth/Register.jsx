@@ -4,13 +4,26 @@ import { Divider, InputField, SelectInput, SimpleButton } from '../../components
 import { Link } from 'react-router'
 import { roles } from '../../utils/common.js'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import axios from 'axios'
+import { REGISTER_API } from '../../utils/apis.js'
 
 const Register = () => {
 
   const { register, handleSubmit } = useForm()
 
-  const handleRegisterUser = (data) => {
-    console.log(data)
+  const handleRegisterUser = async (data) => {
+    try {
+      const response = await axios.post(REGISTER_API, data)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      toast.error("Internal server error")
+      throw new Error(error)
+    }
   }
 
   return (

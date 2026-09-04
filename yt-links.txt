@@ -47,3 +47,4 @@
 	- https://www.youtube.com/watch?v=p6k2iZtUgAI
 
 4 Sep, 2026 (Register ui, api integration)
+	- https://www.youtube.com/watch?v=detCETCeZo8

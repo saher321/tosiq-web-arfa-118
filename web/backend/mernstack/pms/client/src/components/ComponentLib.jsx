@@ -25,7 +25,7 @@ export const SimpleButton = (props) => {
     )
 }
 
-export const SelectOption = (props) => {
+export const SelectInput = (props) => {
     const { data = [], className, ...otherProps } = props
 
     return (
@@ -49,4 +49,10 @@ export const SelectOption = (props) => {
         </select>
     )
 
+}
+
+export const Divider = () => {
+    return (
+        <div className='my-3 w-full h-[1px] bg-gray-300'></div>
+    )
 }

@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export const DBConnection = async () => {
     try {
         console.log("DB is connecting...")
-        const str = "mongodb+srv://pnymeet_db_user:bqEEYyQRzWOiotwD@cluster0.c6nfeck.mongodb.net/pms_b118?appName=Cluster0"
-        const response = await mongoose.connect(str)
+        const response = await mongoose.connect(process.env.MONGODB_LIVE)
         if (response){
             console.log("DB is connected:", response.connection.name)
         } else {

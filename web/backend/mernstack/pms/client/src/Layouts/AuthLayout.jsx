@@ -9,9 +9,9 @@ const AuthLayout = ({ children }) => {
                 {APP_NAME_LC}
             </div>
             
-        <div className='mx-auto max-w-sm'>
-            { children }
-        </div>
+            <div className='mx-auto max-w-sm'>
+                { children }
+            </div>
         </div>
     )
 }

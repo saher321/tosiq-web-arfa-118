@@ -1,11 +1,12 @@
 import React from 'react'
+import { APP_NAME_LC } from '../utils/strings.js'
 
 const AuthLayout = ({ children }) => {
 
     return (
         <div>
             <div className='m-5 text-amber-600 font-bold italic'>
-                pms
+                {APP_NAME_LC}
             </div>
             
         <div className='mx-auto max-w-sm'>

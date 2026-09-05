@@ -75,43 +75,34 @@ export const login = async (req, res) => {
         })
     }
 
-    // try {
-    //     const user = await Auth.findOne({email: email})
+    try {
+        const user = await Auth.findOne({email: email})
 
-    //     if (user) {
-    //         return res.send({
-    //             status: false,
-    //             message: "User already exist"
-    //         })
-    //     }
+        if (!user) {
+            return res.send({
+                status: false,
+                message: "User not found"
+            })
+        }
 
-    //     const salt = await bcrypt.genSalt(10);
-    //     const encPass = await bcrypt.hash(password, salt);
+        const isMatched = await bcrypt.compare(password, user.password);
 
-    //     const newUser = {
-    //         fullName,
-    //         email,
-    //         password: encPass,
-    //         role
-    //     }
+        if (isMatched) {
+            return res.send({
+                status: true,
+                message: "Loggedin successfully",
+                user
+            })
+        } else {
+            return res.send({
+                status: false,
+                message: "Credentials didn't matched"
+            })
+        }
 
-    //     const result = await Auth.create(newUser)
-
-    //     if (result) {
-    //         return res.send({
-    //             status: true,
-    //             message: "Account has been created"
-    //         })
-    //     } else {
-    //         return res.send({
-    //             status: false,
-    //             message: "Failed to create an account"
-    //         })
-    //     }
-
-    // } catch (error) {
-    //     throw new Error(error)
-    // }
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 export const forgotPassword = () => {}

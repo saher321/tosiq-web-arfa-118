@@ -16,6 +16,7 @@ const Login = () => {
     try {
       const response = await axios.post(LOGIN_API, data)
       if (response.data.status == true) {
+        console.log(response.data.user)
         toast.success(response.data.message)
         navigate('/', { replace: true })
       } else {

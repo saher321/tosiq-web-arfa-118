@@ -14,12 +14,13 @@ const authSchema = new mongoose.Schema({
         required: true
     },
     role: {
+        type: String,
         enum: ['pm', 'emp'],
         default: 'emp'
     },
     otp: {
         type: String,
-        required: true
+        default: null
     },
     isOtpVerified: {
         type: Boolean,

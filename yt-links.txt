@@ -48,3 +48,6 @@
 
 4 Sep, 2026 (Register ui, api integration)
 	- https://www.youtube.com/watch?v=detCETCeZo8
+
+5 Sep, 2026 (Registration api integration, login ui)
+	- https://www.youtube.com/watch?v=uOKbceknAbI

@@ -30,7 +30,7 @@ export const register = async (req, res) => {
         }
 
         const salt = await bcrypt.genSalt(10);
-        const encPass = await bcrypt.hash(password, salt);
+        const encPass = await bcrypt.hash(password, salt); // $regdg.67tyfuuiu
 
         const newUser = {
             fullName,

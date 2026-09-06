@@ -51,3 +51,6 @@
 
 5 Sep, 2026 (Registration api integration, login ui)
 	- https://www.youtube.com/watch?v=uOKbceknAbI
+
+6 Sep, 2026 (User token, zustand implementation)
+	- https://www.youtube.com/watch?v=RYS8TAeVmAg

@@ -6,18 +6,22 @@ import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import axios from 'axios'
 import { LOGIN_API } from '../../utils/apis.js'
+import useAuth from '../../store/useAuth.jsx'
 
 const Login = () => {
 
   const { register, handleSubmit } = useForm()
+  const login = useAuth(state => state.login)
+
   const navigate = useNavigate()
 
   const handleLoginUser = async (data) => {
     try {
       const response = await axios.post(LOGIN_API, data)
       if (response.data.status == true) {
-        console.log(response.data.user)
+        
         toast.success(response.data.message)
+        login( response.data.loggedInUser, response.data.token )
         navigate('/', { replace: true })
       } else {
         toast.error(response.data.message)

@@ -1,6 +1,7 @@
 import { REG_EMAIL } from "../../utils/common.js";
 import Auth from "./auth.model.js"
 import bcrypt from "bcryptjs";
+import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
     const { fullName, email, password, role } = req.body
@@ -85,13 +86,16 @@ export const login = async (req, res) => {
             })
         }
 
+        const loggedInUser = { id: user.id, fullName: user.fullName, email: user.email, role: user.role }
         const isMatched = await bcrypt.compare(password, user.password);
+        const token = jwt.sign(loggedInUser, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         if (isMatched) {
             return res.send({
                 status: true,
                 message: "Loggedin successfully",
-                user
+                loggedInUser,
+                token
             })
         } else {
             return res.send({

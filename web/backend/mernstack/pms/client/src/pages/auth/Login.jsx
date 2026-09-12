@@ -61,8 +61,9 @@ const Login = () => {
               />
             </div>
             
-            <div>
+            <div className='flex items-center justify-between'>
               <SimpleButton text="Login" />
+              <Link to={'/auth/forgot-password'} className='text-xs text-blue-600 hover:underline'>Forgot password?</Link>
             </div>
           </form>
           <Divider />

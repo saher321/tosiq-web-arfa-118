@@ -1,4 +1,4 @@
-import { REG_EMAIL } from "../../utils/common.js";
+import { generateOTP, REG_EMAIL, sendEmail } from "../../utils/common.js";
 import Auth from "./auth.model.js"
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken'
@@ -109,5 +109,49 @@ export const login = async (req, res) => {
     }
 }
 
-export const forgotPassword = () => {}
-export const resetPassword = () => {}
+export const forgotPassword = async (req, res) => {
+    const { email } = req.body
+    console.log(email)
+    if (!REG_EMAIL.test(email)) {
+        return res.send({
+            status: false,
+            message: "Enter valid email format"
+        })
+    }
+
+    try {
+        const user = await Auth.findOne({email: email})
+
+        if (!user) {
+            return res.send({
+                status: false,
+                message: "User not found"
+            })
+        }
+
+        let otp = generateOTP()
+        let subject = "PMS Reset passwor OTP[authentication_process]"
+        let content = `
+        Hello ${user.fullName}, <br>
+        Here is your requested OTP: <h3>${otp}</h3>
+        <em>Note: Do not share this otp to anyone</em>
+        `
+
+        sendEmail(user.email, subject, content)
+        
+        user.otp = otp
+        user.isOtpVerified = false
+        user.save()
+
+        return res.send({
+            status: true,
+            message: "OTP has been sent to your email"
+        })
+
+    } catch (error) {
+        throw new Error(error)
+    }
+
+
+}
+export const resetPassword = (req, res) => {}

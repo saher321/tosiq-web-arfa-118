@@ -136,13 +136,13 @@ export const forgotPassword = async (req, res) => {
         Here is your requested OTP: <h3>${otp}</h3>
         <em>Note: Do not share this otp to anyone</em>
         `
-
-        sendEmail(user.email, subject, content)
         
         user.otp = otp
         user.isOtpVerified = false
         user.save()
-
+        
+        sendEmail(user.email, subject, content)
+        
         return res.send({
             status: true,
             message: "OTP has been sent to your email"

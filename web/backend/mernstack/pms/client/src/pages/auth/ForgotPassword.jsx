@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router'
 import { FORGOT_API } from '../../utils/apis.js'
 import toast from 'react-hot-toast'
 import axios from 'axios'
-import useAuth from '../../store/useAuth.jsx'
 
 const ForgotPassword = () => {
   const {register, handleSubmit} = useForm()

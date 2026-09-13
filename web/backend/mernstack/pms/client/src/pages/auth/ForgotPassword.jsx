@@ -18,7 +18,7 @@ const ForgotPassword = () => {
       if (response.data.status == true) {
         toast.success(response.data.message)
         localStorage.setItem('forgotEmail', data.email)
-        // navigate('/auth/reset-password', { replace: true })
+        navigate('/auth/reset-password', { replace: true })
       } else {
         toast.error(response.data.message)
       }

@@ -60,3 +60,6 @@
 
 6 Sep, 2026 (User token, zustand implementation)
 	- https://www.youtube.com/watch?v=RYS8TAeVmAg
+
+13 Sep, 2026 (reset password api + ui)
+	- https://www.youtube.com/watch?v=dpeGsu0Vud0

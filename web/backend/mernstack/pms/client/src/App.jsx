@@ -5,17 +5,24 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/auth/Login'
 import ForgotPassword from './pages/auth/ForgotPassword'
 import ResetPassword from './pages/auth/ResetPassword'
+import ProtectedRoutes from './utils/ProtectedRoutes'
+import AuthRoutes from './utils/AuthRoutes'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/auth/register' element={<Register />} />
-        <Route path='/auth/login' element={<Login />} />
-        <Route path='/auth/forgot-password' element={<ForgotPassword />} />
-        <Route path='/auth/reset-password' element={<ResetPassword />} />
+        <Route element={<AuthRoutes />}>
+          <Route path='/auth/register' element={<Register />} />
+          <Route path='/auth/login' element={<Login />} />
+          <Route path='/auth/forgot-password' element={<ForgotPassword />} />
+          <Route path='/auth/reset-password' element={<ResetPassword />} />
+        </Route>
 
-        <Route path='/' element={<Dashboard />}/>
+        
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/' element={<Dashboard />}/>
+        </Route>
 
       </Routes>
     </BrowserRouter>

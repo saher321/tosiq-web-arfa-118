@@ -1,0 +1,16 @@
+Inventory store
+1- Login
+    email, password
+2- Signup
+    full name, email, password
+3- Forgot password
+    email
+4- Reset Password
+    email, OTP, new password
+5- Product category
+    name
+6- Products
+    name, category, price, stock, description
+--------------------------------------------
+
+1. Make ui screens and services for login and signup

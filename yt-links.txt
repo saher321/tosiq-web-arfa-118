@@ -63,3 +63,6 @@
 
 13 Sep, 2026 (reset password api + ui)
 	- https://www.youtube.com/watch?v=dpeGsu0Vud0
+
+18 Sep, 2026 (auth - protected routes, admin design with AI)
+	- https://www.youtube.com/watch?v=QdznGhCY9eA

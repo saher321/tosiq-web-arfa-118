@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import {
   LayoutDashboard,
-  Users,
-  FolderKanban,
-  UserCheck,
   CheckSquare,
   Menu,
   X,
-  Search,
-  Bell,
-  ChevronDown,
 } from "lucide-react";
 import useAuth from "../store/useAuth";
 import { useNavigate } from "react-router";
@@ -23,28 +17,13 @@ const navigation = [
     icon: LayoutDashboard,
   },
   {
-    name: "Customers",
-    href: "/admin/customers",
-    icon: Users,
-  },
-  {
-    name: "Projects",
-    href: "/admin/projects",
-    icon: FolderKanban,
-  },
-  {
-    name: "Assignees",
-    href: "/admin/assignees",
-    icon: UserCheck,
-  },
-  {
     name: "Tasks",
     href: "/admin/tasks",
     icon: CheckSquare,
   },
 ];
 
-const AdminLayout = ({ children }) => {
+const UserLayout = ({ children }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const logout = useAuth(state => state.logout)
     const user = useAuth(state => state.user)
@@ -150,7 +129,7 @@ const AdminLayout = ({ children }) => {
 
                 <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold">
-                    Admin Manager
+                    Employee
                 </p>
                 <p className="truncate text-xs text-gray-400">
                     
@@ -206,4 +185,4 @@ const AdminLayout = ({ children }) => {
     );
 };
 
-export default AdminLayout;
+export default UserLayout;

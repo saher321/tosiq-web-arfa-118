@@ -52,17 +52,17 @@
 5 Sep, 2026 (Registration api integration, login ui)
 	- https://www.youtube.com/watch?v=uOKbceknAbI
 
+6 Sep, 2026 (User token, zustand implementation)
+	- https://www.youtube.com/watch?v=RYS8TAeVmAg
 
 12 Sep, 2026 (Forgot ui, api)
 	- https://www.youtube.com/watch?v=sd6uJDR3Ico
-
-
-
-6 Sep, 2026 (User token, zustand implementation)
-	- https://www.youtube.com/watch?v=RYS8TAeVmAg
 
 13 Sep, 2026 (reset password api + ui)
 	- https://www.youtube.com/watch?v=dpeGsu0Vud0
 
 18 Sep, 2026 (auth - protected routes, admin design with AI)
 	- https://www.youtube.com/watch?v=QdznGhCY9eA
+
+19 Sep, 2026 (rolebasedlayout, customers)
+	- https://www.youtube.com/watch?v=S-nKWd5yCnc

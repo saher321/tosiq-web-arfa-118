@@ -12,34 +12,34 @@ import {
   ChevronDown,
 } from "lucide-react";
 import useAuth from "../store/useAuth";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { APP_NAME_LC, APP_NAME_UC } from "../utils/strings";
 import toast from "react-hot-toast";
 
 const navigation = [
   {
     name: "Dashboard",
-    href: "/admin",
+    href: "/",
     icon: LayoutDashboard,
   },
   {
     name: "Customers",
-    href: "/admin/customers",
+    href: "/customers",
     icon: Users,
   },
   {
     name: "Projects",
-    href: "/admin/projects",
+    href: "/projects",
     icon: FolderKanban,
   },
   {
     name: "Assignees",
-    href: "/admin/assignees",
+    href: "/assignees",
     icon: UserCheck,
   },
   {
     name: "Tasks",
-    href: "/admin/tasks",
+    href: "/tasks",
     icon: CheckSquare,
   },
 ];
@@ -50,6 +50,8 @@ const AdminLayout = ({ children }) => {
     const user = useAuth(state => state.user)
     const isAuthenticated = useAuth(state => state.isAuthenticated)
     const navigate = useNavigate()
+    const activeLink = 'group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition bg-amber-50 text-amber-600'
+    const inactiveLink = 'group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition text-gray-500 hover:bg-gray-50 hover:text-gray-900'
     const handleLogout = () => {
         toast.success("Account has been logged out")
         logout()
@@ -107,34 +109,22 @@ const AdminLayout = ({ children }) => {
             <nav className="space-y-1">
                 {navigation.map((item, index) => {
                 const Icon = item.icon;
-                const active = index === 0;
 
                 return (
-                    <a
+                    <NavLink
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     onClick={() => setSidebarOpen(false)}
-                    className={`
-                        group flex items-center gap-3 rounded-xl px-3 py-3
-                        text-sm font-medium transition
-                        ${
-                        active
-                            ? "bg-amber-50 text-amber-600"
-                            : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                    className={({ isActive }) =>
+                            isActive ? activeLink : inactiveLink
                         }
-                    `}
                     >
                     <Icon
                         size={19}
-                        className={
-                        active
-                            ? "text-amber-600"
-                            : "text-gray-400 group-hover:text-gray-700"
-                        }
                     />
 
                         <span>{item.name}</span>
-                    </a>
+                    </NavLink>
                 );
                 })}
             </nav>

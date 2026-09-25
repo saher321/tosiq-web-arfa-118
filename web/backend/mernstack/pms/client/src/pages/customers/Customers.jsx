@@ -23,6 +23,9 @@ const Customers = () => {
     }
 
     const handleDelete = async (id) => {
+        if (!window.confirm("Are you sure you want to delete this?")) {
+            return;
+        }
         try {
             const response = await axios.delete(`${DELETE_CUSTOMER_API}/${id}`)
             if (response.data.status == true) {
@@ -116,7 +119,7 @@ const Customers = () => {
                                                             <button onClick={() => handleDelete(customer._id)} className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
                                                                 <Trash size={16} />
                                                             </button>
-                                                            <Link className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
+                                                            <Link to={`/customers/edit/${customer._id}`} className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
                                                                 <UserRoundPen size={16} />
                                                             </Link>
                                                         </div>

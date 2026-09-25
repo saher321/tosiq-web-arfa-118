@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RoleBasedLayout from '../../Layouts/RoleBasedLayout';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router';
+import { CUSTOMERS_API } from '../../utils/apis';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const Customers = () => {
+    const [customers, setCustomers ] = useState([])
+    const getCustomers = async () => {
+        try {
+            const response = await axios.get(CUSTOMERS_API)
+            if (response.data.status == true) {
+                setCustomers(response.data.customers)
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            toast.error("Internal server error")
+            throw new Error(error)
+        }
+    }
+
+    useEffect(() => {
+        getCustomers()
+    }, [])
+
     return (
         <RoleBasedLayout>
 
@@ -37,10 +59,10 @@ const Customers = () => {
                         </div>
 
                         <Link
-                            href="/customers/add"
+                            to="/customers/add"
                             className="flex items-center gap-1 text-sm font-semibold text-amber-600 hover:text-amber-700"
                         >
-                            View all
+                            Add customer
                             <ArrowUpRight size={15} />
                         </Link>
                     </div>
@@ -60,45 +82,22 @@ const Customers = () => {
                                     </thead>
 
                                     <tbody class="divide-y divide-gray-200">
-                                        <tr class="hover:bg-amber-50">
-                                            <td class="px-6 py-4">1</td>
-                                            <td class="px-6 py-4 font-medium">John Doe</td>
-                                            <td class="px-6 py-4">john@example.com</td>
-                                            <td class="px-6 py-4">+1 555-0101</td>
-                                            <td class="px-6 py-4">123 Main Street</td>
-                                        </tr>
-
-                                        <tr class="hover:bg-amber-50">
-                                            <td class="px-6 py-4">2</td>
-                                            <td class="px-6 py-4 font-medium">Sarah Smith</td>
-                                            <td class="px-6 py-4">sarah@example.com</td>
-                                            <td class="px-6 py-4">+1 555-0102</td>
-                                            <td class="px-6 py-4">456 Oak Avenue</td>
-                                        </tr>
-
-                                        <tr class="hover:bg-amber-50">
-                                            <td class="px-6 py-4">3</td>
-                                            <td class="px-6 py-4 font-medium">Michael Brown</td>
-                                            <td class="px-6 py-4">michael@example.com</td>
-                                            <td class="px-6 py-4">+1 555-0103</td>
-                                            <td class="px-6 py-4">789 Pine Road</td>
-                                        </tr>
-
-                                        <tr class="hover:bg-amber-50">
-                                            <td class="px-6 py-4">4</td>
-                                            <td class="px-6 py-4 font-medium">Emily Johnson</td>
-                                            <td class="px-6 py-4">emily@example.com</td>
-                                            <td class="px-6 py-4">+1 555-0104</td>
-                                            <td class="px-6 py-4">321 Maple Street</td>
-                                        </tr>
-
-                                        <tr class="hover:bg-amber-50">
-                                            <td class="px-6 py-4">5</td>
-                                            <td class="px-6 py-4 font-medium">David Wilson</td>
-                                            <td class="px-6 py-4">david@example.com</td>
-                                            <td class="px-6 py-4">+1 555-0105</td>
-                                            <td class="px-6 py-4">654 Cedar Lane</td>
-                                        </tr>
+                                        { customers.map((customer, i) => {
+                                            return (
+                                                
+                                                <tr key={i} class="hover:bg-amber-50">
+                                                    <td class="px-6 py-4">{i+1}</td>
+                                                    <td class="px-6 py-4 font-medium">{customer.fullName}</td>
+                                                    <td class="px-6 py-4">{customer.email}</td>
+                                                    <td class="px-6 py-4">{customer.phone}</td>
+                                                    <td class="px-6 py-4">
+                                                        <div className='w-20 truncate'>
+                                                            {customer.address}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }) }
                                     </tbody>
                                 </table>
                             </div>

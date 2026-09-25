@@ -3,6 +3,7 @@ import { DBConnection } from './config/db.js'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import authRouter from './modules/auth/auth.routes.js'
+import customerRouter from './modules/customer/customer.routes.js'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(cors())
 // routes
 
 app.use(PREFIX, authRouter)
+app.use(PREFIX, customerRouter)
 
 app.get(PREFIX + '/check', (req, res) => {
     return res.send({

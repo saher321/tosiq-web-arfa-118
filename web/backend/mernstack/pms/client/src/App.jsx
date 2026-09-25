@@ -8,6 +8,7 @@ import ResetPassword from './pages/auth/ResetPassword'
 import ProtectedRoutes from './utils/ProtectedRoutes'
 import AuthRoutes from './utils/AuthRoutes'
 import Customers from './pages/customers/Customers'
+import AddCustomer from './pages/customers/AddCustomer'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Dashboard />}/>
           <Route path='/customers' element={<Customers />}/>
+          <Route path='/customers/add' element={<AddCustomer />}/>
         </Route>
 
       </Routes>

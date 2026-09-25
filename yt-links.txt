@@ -66,3 +66,6 @@
 
 19 Sep, 2026 (rolebasedlayout, customers)
 	- https://www.youtube.com/watch?v=S-nKWd5yCnc
+
+20 Sep, 2026 (customer list, add customer)
+	- https://www.youtube.com/watch?v=WzonwAtU6RA

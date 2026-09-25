@@ -69,3 +69,6 @@
 
 20 Sep, 2026 (customer list, add customer)
 	- https://www.youtube.com/watch?v=WzonwAtU6RA
+
+25 Sep, 2026 (delete,)
+	- https://www.youtube.com/watch?v=83ENfGkSewc

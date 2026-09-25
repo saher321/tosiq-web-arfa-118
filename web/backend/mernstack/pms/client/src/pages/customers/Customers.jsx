@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import RoleBasedLayout from '../../Layouts/RoleBasedLayout';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Trash, UserRoundPen } from 'lucide-react';
 import { Link } from 'react-router';
-import { CUSTOMERS_API } from '../../utils/apis';
+import { CUSTOMERS_API, DELETE_CUSTOMER_API } from '../../utils/apis';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
@@ -18,6 +18,21 @@ const Customers = () => {
             }
         } catch (error) {
             toast.error("Internal server error")
+            throw new Error(error)
+        }
+    }
+
+    const handleDelete = async (id) => {
+        try {
+            const response = await axios.delete(`${DELETE_CUSTOMER_API}/${id}`)
+            if (response.data.status == true) {
+                toast.success(response.data.message)
+                setCustomers(response.data.customers)
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            toast.error("Internal server error!")
             throw new Error(error)
         }
     }
@@ -78,6 +93,7 @@ const Customers = () => {
                                             <th class="px-6 py-3 text-left text-sm font-semibold">Email</th>
                                             <th class="px-6 py-3 text-left text-sm font-semibold">Phone</th>
                                             <th class="px-6 py-3 text-left text-sm font-semibold">Address</th>
+                                            <th class="px-6 py-3 text-left text-sm font-semibold">Actions</th>
                                         </tr>
                                     </thead>
 
@@ -93,6 +109,16 @@ const Customers = () => {
                                                     <td class="px-6 py-4">
                                                         <div className='w-20 truncate'>
                                                             {customer.address}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div className='flex items-center gap-3'>
+                                                            <button onClick={() => handleDelete(customer._id)} className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
+                                                                <Trash size={16} />
+                                                            </button>
+                                                            <Link className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
+                                                                <UserRoundPen size={16} />
+                                                            </Link>
                                                         </div>
                                                     </td>
                                                 </tr>

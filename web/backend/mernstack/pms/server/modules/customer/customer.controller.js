@@ -101,4 +101,25 @@ export const editCustomer = async (req, res) => {
         throw new Error(error)
     }
 }
-export const updateCustomer = async (req, res) => {}
+export const updateCustomer = async (req, res) => {
+    const { _id, fullName, email, phone, address } = req.body
+
+    try {
+        const updatedCustomer = { fullName, email, phone, address }
+        const customer = await Customer.findByIdAndUpdate({_id:_id}, updatedCustomer )
+        if (customer) {
+            return res.send({
+                status: true,
+                message: "Customer has been updated"
+            })
+        } else {
+            return res.send({
+                status: false,
+                message: "Failed to update customer"
+            })
+        }
+
+    } catch (error) {
+        throw new Error(error)
+    }
+}

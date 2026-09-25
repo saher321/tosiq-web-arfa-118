@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { InputField, SimpleButton } from '../../components/ComponentLib';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { EDIT_CUSTOMER_API } from '../../utils/apis';
+import { EDIT_CUSTOMER_API, UPDATE_CUSTOMER_API } from '../../utils/apis.JS';
 import toast from 'react-hot-toast';
 
 const EditCustomer = () => {
@@ -14,7 +14,7 @@ const EditCustomer = () => {
     const navigate = useNavigate()
     const handleUpdateCustomer = async (data) => {
         try {
-            const response = await axios.post(ADD_CUSTOMER_API, data)
+            const response = await axios.put(UPDATE_CUSTOMER_API, data)
             if (response.data.status == true) {
                 toast.success(response.data.message)
                 navigate("/customers")
@@ -134,7 +134,7 @@ const EditCustomer = () => {
                                         </div>
                                         <div className="col-span-12">
                                             <SimpleButton
-                                            text="Add new customer"
+                                            text="Update customer"
                                              />
                                         </div>
                                     </div>

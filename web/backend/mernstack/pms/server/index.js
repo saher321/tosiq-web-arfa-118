@@ -4,6 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import authRouter from './modules/auth/auth.routes.js'
 import customerRouter from './modules/customer/customer.routes.js'
+import projectRouter from './modules/project/project.routes.js'
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ app.use(cors())
 
 app.use(PREFIX, authRouter)
 app.use(PREFIX, customerRouter)
+app.use(PREFIX, projectRouter)
 
 app.get(PREFIX + '/check', (req, res) => {
     return res.send({

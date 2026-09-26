@@ -11,3 +11,11 @@ export const ADD_CUSTOMER_API       = BASE_URL + "/customers/add"
 export const DELETE_CUSTOMER_API    = BASE_URL + "/customers/delete"
 export const EDIT_CUSTOMER_API      = BASE_URL + "/customers/edit"
 export const UPDATE_CUSTOMER_API    = BASE_URL + "/customers/update"
+
+// projects
+export const PROJECT_CUSTOMERS_API = BASE_URL + "/project-customers"
+export const PROJECTS_API          = BASE_URL + "/projects"
+export const ADD_PROJECT_API       = BASE_URL + "/projects/add"
+export const DELETE_PROJECT_API    = BASE_URL + "/projects/delete"
+export const EDIT_PROJECT_API      = BASE_URL + "/projects/edit"
+export const UPDATE_PROJECT_API    = BASE_URL + "/projects/update"

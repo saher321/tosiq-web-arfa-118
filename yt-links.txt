@@ -72,3 +72,6 @@
 
 25 Sep, 2026 (delete, edit with confirmation box)
 	- https://www.youtube.com/watch?v=83ENfGkSewc
+
+26 Sep, 2026 (update customer, projects ui)
+	- https://www.youtube.com/watch?v=fAuTMNzp9mE

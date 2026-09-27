@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import RoleBasedLayout from '../../Layouts/RoleBasedLayout';
-import { ArrowUpRight, Trash, UserRoundPen } from 'lucide-react';
+import { ArrowUpRight, FolderPen, Trash, UserRoundPen } from 'lucide-react';
 import { Link } from 'react-router';
 import { PROJECTS_API, DELETE_PROJECT_API } from '../../utils/apis';
 import toast from 'react-hot-toast';
@@ -126,7 +126,7 @@ const Projects = () => {
                                                                 <Trash size={16} />
                                                             </button>
                                                             <Link to={`/projects/edit/${project._id}`} className='hover:cursor-pointer hover:bg-amber-600 hover:text-white bg-gray-200 shadow-lg rounded-lg p-2'>
-                                                                <UserRoundPen size={16} />
+                                                                <FolderPen size={16} />
                                                             </Link>
                                                         </div>
                                                     </td>

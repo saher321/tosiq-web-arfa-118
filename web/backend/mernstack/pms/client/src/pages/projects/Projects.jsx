@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import { PROJECTS_API, DELETE_PROJECT_API } from '../../utils/apis';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import moment from 'moment'
 
 const Projects = () => {
     const [projects, setProjects ] = useState([])
@@ -12,6 +13,7 @@ const Projects = () => {
         try {
             const response = await axios.get(PROJECTS_API)
             if (response.data.status == true) {
+                console.log(response.data)
                 setProjects(response.data.projects)
             } else {
                 toast.error(response.data.message)
@@ -87,35 +89,35 @@ const Projects = () => {
 
                     <div className="divide-y divide-gray-100">
                         <div className="px-5 py-5" >
-                            <div class="overflow-x-auto">
-                                <table class="min-w-full border border-gray-200 bg-white shadow-md rounded-lg overflow-hidden">
-                                    <thead class="bg-amber-600 text-white">
+                            <div className="overflow-x-auto">
+                                <table className="min-w-full border border-gray-200 bg-white shadow-md rounded-lg overflow-hidden">
+                                    <thead className="bg-amber-600 text-white">
                                         <tr>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">ID</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Title</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Customer</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Start date</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Deadline</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Status</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Notes</th>
-                                            <th class="px-6 py-3 text-left text-sm font-semibold">Actions</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">ID</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Title</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Customer</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Start date</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Deadline</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Status</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Notes</th>
+                                            <th className="px-6 py-3 text-left text-sm font-semibold">Actions</th>
                                         </tr>
                                     </thead>
 
-                                    <tbody class="divide-y divide-gray-200">
+                                    <tbody className="divide-y divide-gray-200">
                                         { projects.map((project, i) => {
                                             return (
                                                 
-                                                <tr key={i} class="hover:bg-amber-50">
-                                                    <td class="px-6 py-4">{i+1}</td>
-                                                    <td class="px-6 py-4 font-medium">{project.fullName}</td>
-                                                    <td class="px-6 py-4">{project.email}</td>
-                                                    <td class="px-6 py-4">{project.phone}</td>
-                                                    <td class="px-6 py-4">{project.phone}</td>
-                                                    <td class="px-6 py-4">{project.phone}</td>
-                                                    <td class="px-6 py-4">
+                                                <tr key={i} className="hover:bg-amber-50">
+                                                    <td className="px-6 py-4">{i+1}</td>
+                                                    <td className="px-6 py-4 font-medium">{project.title}</td>
+                                                    <td className="px-6 py-4">{project?.customer?.fullName}</td>
+                                                    <td className="px-6 py-4">{moment(project.startDate).format('ll')}</td>
+                                                    <td className="px-6 py-4">{moment(project.deadLine).format('ll')}</td>
+                                                    <td className="px-6 py-4 capitalize">{project.status}</td>
+                                                    <td className="px-6 py-4">
                                                         <div className='w-20 truncate'>
-                                                            {project.address}
+                                                            {project.notes}
                                                         </div>
                                                     </td>
                                                     <td>

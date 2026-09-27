@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
     },
     customer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "customer",
+        ref: "Customer",
         required: true
     },
     startDate: {

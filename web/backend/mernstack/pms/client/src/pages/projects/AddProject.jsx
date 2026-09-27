@@ -86,7 +86,7 @@ const AddProject = () => {
 
                     <div className="divide-y divide-gray-100">
                         <div className="px-5 py-5" >
-                            <div class="overflow-x-auto">
+                            <div className="overflow-x-auto">
                                 <form onSubmit={handleSubmit(handleAddNewProject)}>
                                     <div className="grid grid-cols-12 gap-3">
                                         <div className="col-span-12 lg:col-span-6">

@@ -20,7 +20,7 @@ export const projectCustomers = async (req, res) => {
 
 export const projects = async (req, res) => {
     try {
-        const projects = await Project.find({})
+        const projects = await Project.find({}).populate('customer')
         return res.send({
             status: true,
             projects
@@ -31,8 +31,8 @@ export const projects = async (req, res) => {
 }
 
 export const addProject = async (req, res) => {
-    const { fullName, email, phone, address } = req.body
-    if (!fullName || !email || !phone) {
+    const { title, customer, startDate, deadLine, status, notes } = req.body
+    if (!title || !startDate || !deadLine) {
         return res.send({
             status: false,
             message: "Please provide remainings fields"
@@ -40,15 +40,8 @@ export const addProject = async (req, res) => {
     }
 
     try {
-        const project = await Project.findOne({email})
-        if (project){
-            return res.send({
-                status: false,
-                message: "This email is already exists"
-            })
-        }
 
-        const projectObj = { fullName, email, phone, address }
+        const projectObj = { title, customer, startDate, deadLine, status, notes }
         const newProject = Project.create(projectObj)
         if (newProject) {
             return res.send({

@@ -14,3 +14,6 @@ Inventory store
 --------------------------------------------
 
 1. Make ui screens and services for login and signup
+
+ASSIGNMENT - 10-OCT-2026
+2. Forgot password ui with its service

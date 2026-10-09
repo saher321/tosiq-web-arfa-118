@@ -59,6 +59,7 @@ export const addProject = async (req, res) => {
         throw new Error(error)
     }
 }
+
 export const deleteProject = async (req, res) => {
     const {id} = req.params
     if (!id) {
@@ -86,6 +87,7 @@ export const deleteProject = async (req, res) => {
         throw new Error(error)
     }
 }
+
 export const editProject = async (req, res) => {
     const {id} = req.params
     if (!id) {
@@ -113,12 +115,12 @@ export const editProject = async (req, res) => {
         throw new Error(error)
     }
 }
-export const updateProject = async (req, res) => {
-    const { _id, fullName, email, phone, address } = req.body
 
+export const updateProject = async (req, res) => {
+    const { _id, title, customer, startDate, deadLine, status, notes } = req.body
     try {
-        const updatedProject = { fullName, email, phone, address }
-        const project = await Project.findByIdAndUpdate({_id:_id}, updatedProject )
+        const updatedProject = { title, customer, startDate, deadLine, status, notes }
+        const project = await Project.findByIdAndUpdate({_id: _id}, updatedProject )
         if (project) {
             return res.send({
                 status: true,

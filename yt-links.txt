@@ -78,3 +78,6 @@
 
 27 Sep, 2026 (project listing with customer relation, adding project with customer relation)
 	- https://www.youtube.com/watch?v=-DcMgjHcFik
+
+9 Oct, 2026 (project edit - Update)
+	- https://www.youtube.com/watch?v=hbIY3N1J2Wo

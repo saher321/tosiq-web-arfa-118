@@ -84,3 +84,6 @@
 
 11 Oct, 2026 (next js intro pages)
 	- https://www.youtube.com/watch?v=Lbxi-6H93dg
+
+16 Oct, 2026 (shadcn com lib)
+	- https://www.youtube.com/watch?v=vOv9a9fNzN4

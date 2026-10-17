@@ -87,3 +87,6 @@
 
 16 Oct, 2026 (shadcn com lib)
 	- https://www.youtube.com/watch?v=vOv9a9fNzN4
+
+17 Oct, 2026 (php intro)
+	- https://www.youtube.com/watch?v=lNWDomR-vx0

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <?php echo "ok"?> -->
+    <h2>
+        Add student
+        <form action="./scripts/save_student.php" method="get">
+            <div>
+                <label for="">Name</label> <br>
+                <input type="text" name="std_name">
+            </div>
+            
+            <div>
+                <label for="">Email</label> <br>
+                <input type="email" name="std_email">
+            </div>
+            
+            <div>
+                <label for="">Phone</label> <br>
+                <input type="tel" name="std_phone">
+            </div>
+            
+            <div>
+                <input type="submit" value="Add student" name="sbmt_btn">
+            </div>
+
+        </form>
+    </h2>
+</body>
+</html>

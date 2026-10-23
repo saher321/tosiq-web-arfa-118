@@ -93,3 +93,6 @@
 
 18 Oct, 2026 (db connection, xampp, insert data)
 	- https://www.youtube.com/watch?v=MUfd-7gaLY0
+
+23 Oct, 2026 (show data, delete data)
+	- https://www.youtube.com/watch?v=ekYXfEejlGQ

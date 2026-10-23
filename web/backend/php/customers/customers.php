@@ -1,4 +1,13 @@
 
+<?php
+include "./config/db.php";
+
+$query = "select * from customers";
+
+$result = mysqli_query($connection, $query)
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,22 +98,22 @@
 
                     <tbody id="customerTable" class="divide-y divide-gray-100">
 
-                        <!-- Sample Customer 1 -->
+                        <?php while($row = mysqli_fetch_assoc($result)){?>
                         <tr class="customer-row transition hover:bg-gray-50">
                             <td class="whitespace-nowrap px-6 py-4 text-gray-500">1</td>
                             <td class="whitespace-nowrap px-6 py-4">
                                 <div class="flex items-center gap-3">
                                     <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 font-semibold text-gray-600">
-                                        AK
+                                        U
                                     </div>
-                                    <span class="font-medium text-gray-900">Ali Khan</span>
+                                    <span class="font-medium text-gray-900"><?php echo $row['name']?></span>
                                 </div>
                             </td>
                             <td class="whitespace-nowrap px-6 py-4 text-gray-500">
-                                ali@example.com
+                                <?php echo $row['email']?>
                             </td>
                             <td class="whitespace-nowrap px-6 py-4 text-gray-500">
-                                +92 300 1234567
+                                <?php echo $row['phone']?>
                             </td>
                             <td class="whitespace-nowrap px-6 py-4">
                                 <div class="flex justify-end gap-3">
@@ -120,38 +129,8 @@
                                 </div>
                             </td>
                         </tr>
+                        <?php }?>
 
-                        <!-- Sample Customer 2 -->
-                        <tr class="customer-row transition hover:bg-gray-50">
-                            <td class="whitespace-nowrap px-6 py-4 text-gray-500">2</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 font-semibold text-gray-600">
-                                        SA
-                                    </div>
-                                    <span class="font-medium text-gray-900">Sara Ahmed</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 text-gray-500">
-                                sara@example.com
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 text-gray-500">
-                                +92 321 7654321
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex justify-end gap-3">
-                                    <a href="edit_customer.php?id=2"
-                                       class="font-medium text-gray-700 hover:text-black">
-                                        Edit
-                                    </a>
-                                    <button type="button"
-                                            onclick="deleteCustomer(this)"
-                                            class="font-medium text-red-600 hover:text-red-700">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
 
                         <!-- Empty Search State -->
                         <tr id="emptyState" class="hidden">

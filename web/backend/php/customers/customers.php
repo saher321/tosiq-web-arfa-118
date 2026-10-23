@@ -121,11 +121,11 @@ $result = mysqli_query($connection, $query)
                                        class="font-medium text-gray-700 hover:text-black">
                                         Edit
                                     </a>
-                                    <button type="button"
-                                            onclick="deleteCustomer(this)"
-                                            class="font-medium text-red-600 hover:text-red-700">
+                                    <a
+                                    href="./scripts/delete.php?id=<?php echo $row["id"]?>"
+                                    class="font-medium text-red-600 hover:text-red-700">
                                         Delete
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

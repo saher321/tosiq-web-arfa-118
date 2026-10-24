@@ -55,8 +55,8 @@ if (isset($id) && $id > 0) {
         <!-- Customer Form -->
         <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
 
-            <form action="./scripts/add.php" method="POST" class="space-y-6">
-
+            <form action="./scripts/update.php" method="POST" class="space-y-6">
+                <input type="hidden" name="id" value="<?php echo $customer['id']?>">
                 <!-- Full Name -->
                 <div>
                     <label for="name"

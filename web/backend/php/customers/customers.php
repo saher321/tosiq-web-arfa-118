@@ -100,7 +100,7 @@ $result = mysqli_query($connection, $query)
 
                         <?php while($row = mysqli_fetch_assoc($result)){?>
                         <tr class="customer-row transition hover:bg-gray-50">
-                            <td class="whitespace-nowrap px-6 py-4 text-gray-500">1</td>
+                            <td class="whitespace-nowrap px-6 py-4 text-gray-500"><?php echo $row['id']?></td>
                             <td class="whitespace-nowrap px-6 py-4">
                                 <div class="flex items-center gap-3">
                                     <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 font-semibold text-gray-600">
@@ -117,7 +117,7 @@ $result = mysqli_query($connection, $query)
                             </td>
                             <td class="whitespace-nowrap px-6 py-4">
                                 <div class="flex justify-end gap-3">
-                                    <a href="edit_customer.php?id=1"
+                                    <a href="edit_customer.php?id=<?php echo $row["id"]?>"
                                        class="font-medium text-gray-700 hover:text-black">
                                         Edit
                                     </a>

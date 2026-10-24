@@ -96,3 +96,6 @@
 
 23 Oct, 2026 (show data, delete data)
 	- https://www.youtube.com/watch?v=ekYXfEejlGQ
+
+24 Oct, 2026 (edit, update data)
+	- https://www.youtube.com/watch?v=tyCekpahrQc
